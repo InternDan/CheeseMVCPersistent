@@ -32,7 +32,11 @@ namespace CheeseMVC.ViewModels
         }
 
         public AddCheeseViewModel(IEnumerable<CheeseCategory> categories) {
-
+            Categories = new List<SelectListItem>();
+            foreach(CheeseCategory cat in categories)
+            {
+                Categories.Add(new SelectListItem() { Text = cat.Name, Value = cat.ID.ToString() });
+            }
         }
     }
 }
