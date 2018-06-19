@@ -1,0 +1,23 @@
+﻿@model CheeseMVC.ViewModels.ViewMenuViewModel
+
+@{
+    ViewData["Title"] = "@Model.Menu.Name";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2> @Html.DisplayNameFor(model => model.Menu.Name)</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in @Model.Items) {
+        <ul>
+              
+        </ul>
+}
+    </tbody>
+</table>
