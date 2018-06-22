@@ -5,19 +5,11 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2> @Html.DisplayNameFor(model => model.Menu.Name)</h2>
-
-<table class="table">
-    <thead>
-        <tr>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
+<h2> @Model.Menu.Name</h2>
+<p></p>
 @foreach (var item in @Model.Items) {
         <ul>
-              
+            @item.Cheese.Name
         </ul>
 }
-    </tbody>
-</table>
+<p><a asp-controller="Menu" asp-action="AddItem" asp-route-id="@Model.Menu.ID">Add Cheese to Menu</a></p>

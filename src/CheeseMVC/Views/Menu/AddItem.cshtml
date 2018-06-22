@@ -1,0 +1,32 @@
+﻿@model CheeseMVC.ViewModels.AddMenuItemViewModel
+
+@{
+    ViewData["Title"] = "Add Item";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add Item</h2>
+<p></p>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddItem">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Cheeses"></label>
+                <select asp-for="CheeseID" asp-items="Model.Cheeses"></select>
+            </div>
+            <input type="hidden" name="MenuID" value="@Model.Menu.ID" />
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
